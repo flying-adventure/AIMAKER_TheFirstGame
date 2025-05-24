@@ -1,0 +1,106 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #fff4cc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    text-align: center;
+    max-width: 400px;
+}
+
+.ai-container {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.ai-img {
+    width: 150px;
+}
+
+input[type="text"] {
+    padding: 10px;
+    width: 60%;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    padding: 10px 20px;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.result {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.hint-text {
+    font-weight: bold;
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.hp-bar {
+    margin-top: 20px;
+    background-color: #ddd;
+    border-radius: 10px;
+    height: 25px;
+    width: 100%;
+    overflow: hidden;
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+}
+
+.hp-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #ff4d4d, #cc0000);
+    transition: width 0.5s ease-in-out;
+}
+
+.hp-bar {
+    margin-top: 20px;
+    background-color: #eee;
+    border-radius: 10px;
+    height: 25px;
+    width: 100%;
+    overflow: hidden;
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+    border: 1px solid #aaa;
+}
+
+.hp-fill {
+    height: 100%;
+    transition: width 0.5s ease-in-out;
+}
+
+.hp-fill.low {
+    background: linear-gradient(to right, #a3f7bf, #34d399); /* 0~33% */
+}
+
+.hp-fill.medium {
+    background: linear-gradient(to right, #ffe066, #ff9f1c); /* 34~66% */
+}
+
+.hp-fill.high {
+    background: linear-gradient(to right, #ff4d4d, #cc0000); /* 67~100% */
+}
+
+h1 {
+    font-size: 22px;
+}

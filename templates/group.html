@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>조 선택</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>당신의 조를 입력하세요</h1>
+        <form method="POST" action="{{ url_for('group') }}">
+            <input type="text" name="group" placeholder="예: 1조" required>
+            <button type="submit">시작</button>
+        </form>
+    </div>
+</body>
+</html>

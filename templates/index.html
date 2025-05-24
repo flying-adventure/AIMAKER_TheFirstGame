@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>누가 인간일까?</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>여긴 AI만 다니는 학교! 나만 인간이라고!?</h1>
+
+        <div class="ai-container">
+            <img src="{{ url_for('static', filename='ai2.jpg') }}" alt="AI 이미지" class="ai-img">
+        </div>
+
+        {% if hints %}
+            <div class="hint-text">
+                {% for hint in hints %}
+                    <p>💡 {{ hint }}</p>
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        <form method="post">
+            <input type="text" name="answer" placeholder="장소를 입력하세요" autocomplete="off" required>
+            <button type="submit">제출</button>
+        </form>
+
+        {% if result %}
+            <div class="result">{{ result }}</div>
+        {% endif %}
+
+        <div class="hp-bar">
+            {% set hp_class = 'low' %}
+            {% if suspicion > 66 %}
+                {% set hp_class = 'high' %}
+            {% elif suspicion > 33 %}
+                {% set hp_class = 'medium' %}
+            {% endif %}
+            <div class="hp-fill {{ hp_class }}" style="width: {{ suspicion }}%;"></div>
+        </div>
+        <p><strong>의심도: {{ suspicion }}%</strong></p>
+    </div>
+</body>
+</html>

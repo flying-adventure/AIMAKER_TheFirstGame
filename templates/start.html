@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>조 선택</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>조 이름을 입력하세요 (예: 1조, 2조)</h1>
+
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            <div class="result" style="color: green; margin-bottom: 15px;">
+              {% for message in messages %}
+                <p>{{ message }}</p>
+              {% endfor %}
+            </div>
+          {% endif %}
+        {% endwith %}
+
+        <form method="POST">
+            <input type="text" name="group" placeholder="조 이름" required />
+            <button type="submit">시작하기</button>
+        </form>
+
+        {% if error %}
+            <p class="result" style="color: red;">{{ error }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>

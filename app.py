@@ -78,9 +78,12 @@ def index():
             suspicion += 33
             if suspicion > 100:
                 suspicion = 100
-            if hint_count < len(hints):
-                hint_count += 1
-            result = f"❌ 틀렸어요! 다시 생각해보세요. (의심도 {suspicion}%)"
+            if suspicion >= 100:
+                result = "장소를 알아내는데 실패했어요ㅠㅠ"
+            else:
+                if hint_count < len(hints):
+                    hint_count += 1
+                result = f"❌ 틀렸어요! 다시 생각해보세요. (의심도 {suspicion}%)"
             session['hint_count'] = hint_count
             session['suspicion'] = suspicion
 

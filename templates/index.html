@@ -22,9 +22,14 @@
         {% endif %}
 
         <form method="post">
+        {% if suspicion < 100 %}
             <input type="text" name="answer" placeholder="장소를 입력하세요" autocomplete="off" required>
             <button type="submit">제출</button>
+        {% else %}
+            <p style="color: red; font-weight: bold;">🔒 더 이상 시도할 수 없습니다.</p>
+        {% endif %}
         </form>
+
 
         {% if result %}
             <div class="result">{{ result }}</div>
